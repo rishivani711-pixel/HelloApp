@@ -1,25 +1,22 @@
 public class HelloApp {
     public static void main(String[] args) {
 
-        // Default case
         if (args.length == 0) {
+            System.out.println("Hello World");
             System.out.println("Hello, World!");
         } else {
             System.out.print("Hello ");
-        }
-        else {
-            String result = "";
 
-            // Enhanced for loop
+            for (int i = 0; i < args.length; i++) {
+                System.out.print(args[i]);
+
+                if (i < args.length - 1) {
+                    System.out.print(", ");
+                }
             for (String name : args) {
                 System.out.print(name + " ");
-                result += name + ", ";
             }
-
-            // Remove last ", " using substring
-            result = result.substring(0, result.length() - 2);
-
-            System.out.println("Hello " + result);
         }
     }
+}
 }
